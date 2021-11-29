@@ -86,18 +86,9 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 12200 NameNode
 ```
 
-## Stopping Hadoop
-
-```
-su hadoop
-stop-yarn.sh
-stop-dfs.sh
-exit
-```
-
 ## Running a MapReduce job
 
-   * Switch to the Hadoop user: `su hadoop`
+   * Switch to the Hadoop user (if you are not already): `su hadoop`
    * Get the data and MapReduce code:
 
 ```
@@ -109,14 +100,13 @@ cd Lab07
    * Copy the ledger data to HDFS:
 
 ```
-hadoop fs -put ledger.txt
-hadoop fs -ls
-hadoop fs -tail ledger.txt
+hadoop fs -put ledger.txt /
+hadoop fs -ls /
+hadoop fs -tail /ledger.txt
 
-hadoop fs -mkdir myinput
-hadoop fs -mv ledger.txt myinput/ledger.txt
-hadoop fs -ls
-hadoop fs -ls myinput
+hadoop fs -mkdir /myinput
+hadoop fs -mv /ledger.txt /myinput/ledger.txt
+hadoop fs -ls /myinput
 ```
 
    * Run the MapReduce job (mapper.py, reducer.py):
@@ -124,9 +114,18 @@ hadoop fs -ls myinput
 ```
 chmod +x mapper.py
 chmod +x reducer.py
-hadoop jar $HADOOP_HOME/hadoop-streaming.jar\
-  -input myinput
-  -output myoutput
-  -mapper mapper.py
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
+  -input /myinput\
+  -output /myoutput\
+  -mapper mapper.py\
   -reducer reducer.py 
+```
+
+## Stopping Hadoop
+
+```
+su hadoop
+stop-yarn.sh
+stop-dfs.sh
+exit
 ```
