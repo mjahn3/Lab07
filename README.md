@@ -75,4 +75,22 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
    * Format the NameNode: `hdfs namenode -format`
    * Start HDFS: `start-dfs.sh`
    * Start YARN: `start-yarn.sh`
-   * Check Java processes: `jps`
+   * Check Java processes: `jps`. You will see something like:
+
+```
+12368 DataNode
+12737 ResourceManager
+12868 NodeManager
+12565 SecondaryNameNode
+13112 Jps
+12200 NameNode
+```
+
+   * When you want to stop Hadoop:
+
+```
+su hadoop
+stop-yarn.sh
+stop-dfs.sh
+exit
+```
