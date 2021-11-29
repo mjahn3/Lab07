@@ -1,8 +1,10 @@
 # Lab 07
 
-   * Download Hadoop [here](https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz).
-   * Install prerequisites (run in terminal):
+   * Switch to home folder: `cd ~`
+   * Download Hadoop: `wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz)`
+   * Extract Hadoop: `tar -xvzf hadoop-3.3.1.tar.gz`
 
+   * Install prerequisites (run in terminal):
 ```
 sudo apt update
 sudo apt install ssh
@@ -11,7 +13,6 @@ sudo apt install openssh-server openssh-client
 ```
 
    * Setup a user for Hadoop:
-
 ```
 sudo adduser --gecos "" hadoop
 su hadoop
@@ -20,14 +21,12 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
    * Test hadoop user:
-
 ```
 ssh localhost
 exit
 ```
 
    * Copy-paste the following at the end of ~/.bashrc (`gedit ~/.bashrc`):
-
 ```
 export HADOOP_HOME=/home/hadoop/hadoop-3.3.1
 export HADOOP_INSTALL=$HADOOP_HOME
