@@ -86,11 +86,47 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 12200 NameNode
 ```
 
-   * When you want to stop Hadoop:
+## Stopping Hadoop
 
 ```
 su hadoop
 stop-yarn.sh
 stop-dfs.sh
 exit
+```
+
+## Running a MapReduce job
+
+   * Switch to the Hadoop user: `su hadoop`
+   * Get the data and MapReduce code:
+
+```
+cd ~
+git clone git@github.com:GENBUS760/Lab07.git
+cd Lab07 
+```
+
+   * Copy the ledger data to HDFS:
+
+```
+hadoop fs -put ledger.txt
+hadoop fs -ls
+hadoop fs -tail ledger.txt
+
+hadoop fs -mkdir myinput
+hadoop fs -mv ledger.txt myinput/ledger.txt
+hadoop fs -ls
+hadoop fs -ls myinput
+```
+
+   * Run the MapReduce job (mapper.py, reducer.py):
+
+```
+chmod +x mapper.py
+chmod +x reducer.py
+hadoop jar $HADOOP_HOME/hadoop-streaming.jar\
+  -input myinput
+  -output myoutput
+  -mapper mapper.py
+  -reducer reducer.py 
 ```
