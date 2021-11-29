@@ -21,7 +21,7 @@ xhost +
 
 ```
 cd ~
-wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz`
+wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
 tar -xvzf hadoop-3.3.1.tar.gz
 ```
 
