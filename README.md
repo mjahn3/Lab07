@@ -2,6 +2,21 @@
 
 ## Hadoop Setup
 
+   * Install prerequisites:
+
+```
+sudo apt update
+sudo apt install openjdk-8-jdk openjdk-8-jre
+sudo apt install openssh-server openssh-client
+```
+   * Setup a user for Hadoop:
+
+```
+sudo adduser --gecos "" hadoop
+xhost +
+```
+   
+   * Switch to the Hadoop user: `su hadoop`
    * Download and extract Hadoop:
 
 ```
@@ -10,14 +25,6 @@ wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz`
 tar -xvzf hadoop-3.3.1.tar.gz
 ```
 
-   * Install prerequisites:
-
-```
-sudo apt update
-sudo apt install openjdk-8-jdk openjdk-8-jre
-sudo apt install openssh-server openssh-client
-```
-   
    * Get Hadoop configuration files:
 
 ```
@@ -29,15 +36,6 @@ wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/yarn
 wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/hadoop-env.sh -O hadoop-env.sh
 ```
 
-
-   * Setup a user for Hadoop:
-
-```
-sudo adduser --gecos "" hadoop
-xhost +
-```
-
-   * Switch to the Hadoop user: `su hadoop`
    * Setup SSH keys for the Hadoop user:
 
 ```
