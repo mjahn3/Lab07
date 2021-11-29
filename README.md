@@ -1,7 +1,7 @@
 # Lab 07
 
    * Switch to home folder: `cd ~`
-   * Download Hadoop: `wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz)`
+   * Download Hadoop: `wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz`
    * Extract Hadoop: `tar -xvzf hadoop-3.3.1.tar.gz`
 
    * Install prerequisites (run in terminal):
