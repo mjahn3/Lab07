@@ -5,16 +5,18 @@
    * Extract Hadoop: `tar -xvzf hadoop-3.3.1.tar.gz`
 
    * Install prerequisites (run in terminal):
+
 ```
 sudo apt update
-sudo apt install ssh
 sudo apt install openjdk-8-jdk openjdk-8-jre
 sudo apt install openssh-server openssh-client
 ```
 
    * Setup a user for Hadoop:
+
 ```
 sudo adduser --gecos "" hadoop
+xhost +
 su hadoop
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -40,11 +42,11 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ```
 
    * Then run: `source ~/.bashrc`
+   
+   * Switch back to the gb760 user: `exit`
 
-   * Edit a Hadoop configuration file: `gedit ~/hadoop-3.3.1/etc/hadoop/hadoop-env.sh`
-
-       * Change: `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64` 
-       * Save and close
+   * Edit line 54 in file `~/hadoop-3.3.1/etc/hadoop/hadoop-env.sh`
+     to be: `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64` 
 
    * Edit a Hadoop configuration file: `gedit ~/hadoop-3.3.1/etc/hadoop/core-site.xml`
 
