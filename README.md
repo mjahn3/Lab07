@@ -121,7 +121,14 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
   -reducer reducer.py 
 ```
 
-   * If the output directory already exists, delete it with: `hadoop fs -rm -r /myoutput`
+   * If you want to re-run the job and the output directory already exists, delete it with: `hadoop fs -rm -r /myoutput`
+
+   * Check results:
+
+```
+hadoop fs -ls /myoutput
+hadoop fs -cat /myoutput/part-00000
+```
 
 ## Stopping Hadoop
 
