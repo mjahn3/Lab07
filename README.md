@@ -141,6 +141,9 @@ exit
 
 ## Deleting All Hadoop Data
 
-Make sure you are user gb760.
+Make sure you are user gb760. Then run:
 
-Then run: `sudo userdel -rf hadoop`
+```
+sudo rm -rf /home/hadoop
+sudo userdel hadoop
+```
