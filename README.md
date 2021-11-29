@@ -50,11 +50,11 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 
 ```
 cd ~/hadoop-3.3.1/etc/hadoop/
-wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/core-site.xml
-wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/hdfs-site.xml
-wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/mapred-site.xml
-wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/yarn-site.xml
-wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/hadoop-env.sh
+wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/core-site.xml -O core-site.xml
+wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/hdfs-site.xml -O hdfs-site.xml
+wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/mapred-site.xml -O mapred-site.xml
+wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/yarn-site.xml -O yarn-site.xml
+wget https://raw.githubusercontent.com/GENBUS760/Lab07/master/hadoop-config/hadoop-env.sh -O hadoop-env.sh
 ```
 
    * Create directories needed by Hadoop:
