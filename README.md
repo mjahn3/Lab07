@@ -93,7 +93,7 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 
 ```
 cd ~
-git clone git@github.com:GENBUS760/Lab07.git
+git clone https://github.com/GENBUS760/Lab07.git 
 cd Lab07 
 ```
 
