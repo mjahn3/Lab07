@@ -121,6 +121,8 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
   -reducer reducer.py 
 ```
 
+   * If the output directory already exists, delete it with: `hadoop fs -rm -r /myoutput`
+
 ## Stopping Hadoop
 
 ```
