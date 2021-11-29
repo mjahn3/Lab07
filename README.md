@@ -129,3 +129,9 @@ stop-yarn.sh
 stop-dfs.sh
 exit
 ```
+
+## Deleting All Hadoop Data
+
+Make sure you are user gb760.
+
+Then run: `sudo userdel -rf hadoop`
