@@ -117,8 +117,8 @@ chmod +x reducer.py
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
   -input /myinput\
   -output /myoutput\
-  -mapper mapper.py\
-  -reducer reducer.py 
+  -mapper /home/hadoop/Lab07/mapper.py\
+  -reducer /home/hadoop/Lab07/reducer.py 
 ```
 
    * If you want to re-run the job and the output directory already exists, delete it with: `hadoop fs -rm -r /myoutput`
